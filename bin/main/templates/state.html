@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>States</title>
+</head>
+<body>
+	<header>
+		<h1 th:text = "${state.name}"></h1>
+		<small th:text = "${state.motto}"></small>
+	</header>
+    <main>
+    	<h2>
+    		State Fish:
+    			 <a 
+                    th:href="|@{/states/}${state.abbreviation}@{/fish/}|"
+                    th:text="${state.fish}"
+                ></a>
+    	</h2>
+        <ul>
+            <li th:each="city: @{city.name}">
+                <a 
+                    th:href="|@{/states/}${state.abbreviation}@{/cities/}@{city.id}|"
+                    
+                ></a>
+            </li>
+        </ul>
+    </main>
+
+</body>
+</html>

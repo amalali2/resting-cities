@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>States</title>
+</head>
+<body>
+    <main>
+        <h2>States</h2>
+        <ul>
+            <li th:each="state: ${states}">
+                <a 
+                    th:href="|@{/states/}${state.abbreviation}|"
+                    th:text="${state.name}"
+                ></a>
+            </li>
+        </ul>
+        <form action="/states" method="POST">
+            <label>State Name: <input type="text" name="name"/></label>
+            <label>State Motto: <input type="text" name="motto"/></label>
+            <label>State Abbreviation: <input type="text" name="abbreviation"/></label>
+            <label>Url: <input type="text" name="citiesUrl"/></label>
+            <label>State Fish: <input type="text" name="fish"/></label>
+            <input type="submit" value="Submit" />
+        </form>
+    </main>
+
+</body>
+</html>

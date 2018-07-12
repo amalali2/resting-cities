@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>States</title>
+</head>
+<body>
+    <main>
+        <h2>States</h2>
+         <ul>
+            <li th:each="state: ${states}">
+                <a 
+                    th:href="|@{/cities/}${state.abbreviation}}@{/cities/}|"
+                    th:text="${city.name}"
+                ></a>
+            </li>
+        </ul>
+
+    </main>
+
+</body>
+</html>
