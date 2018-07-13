@@ -17,10 +17,10 @@
                 ></a>
     	</h2>
         <ul>
-            <li th:each="city: @{city.name}">
+            <li th:each="city: ${cities}">
                 <a 
                     th:href="|@{/states/}${state.abbreviation}@{/cities/}@{city.id}|"
-                    
+                    th:text="${city.name}"
                 ></a>
             </li>
         </ul>
